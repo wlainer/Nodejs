@@ -1,0 +1,10 @@
+{
+  "name": "hello-world",
+  "version": "0.0.1",
+  "description": "hello world test app",
+  "main": "app.js",
+  "dependencies": {
+    "express": "4.x",
+    "jade": "^1.7.0"
+  }
+}
