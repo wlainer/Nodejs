@@ -1,3 +1,4 @@
 .bowerrc
+app.log
 node_modules/*
 public/bower_components/*
