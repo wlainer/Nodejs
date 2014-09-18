@@ -4,7 +4,7 @@
   "description": "hello world test app",
   "main": "app.js",
   "dependencies": {
-    "express": "4.x",
+    "express": "^3.0.5",
     "jade": "^1.7.0"
   }
 }
