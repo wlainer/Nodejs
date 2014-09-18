@@ -3,8 +3,23 @@ extends layout
 block content
     .container-fluid
         .row-fluid
-            h3 Twitter Bootstrap
-            .col-md-6
-                p hello
-            .col-md-6
-                p world
+            h1 Twitter Bootstrap
+            h3 Abbreviations, Addresses and Blockquotes
+            blockquote
+              p
+                | This blockquote shows you that #{" "}
+                abbr(title='Twitter Bootstrap') TWB #{" "}
+                | is totally awesome.
+            address
+              strong Peter Shaw
+              br
+              | Digital Solutions Computer Software UK
+              br
+              | Consett, County Durham, England
+              br
+              abbr(title='Telephone number') P:
+              | (123) 456-7890
+            address
+              strong Digital Solutions UK
+              br
+              a(href='mailto:#') peter.shaw@digital-solutions.co.uk
