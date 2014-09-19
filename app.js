@@ -1,6 +1,7 @@
 var http = require('http');
 var express = require('express');
-var namespace = require('express-namespace');
+//var namespace = require('express-namespace');
+var resource = require('express-resource');
 var fs = require('fs');
 var app = express();
 
@@ -9,7 +10,42 @@ var config = iniparser.parseSync('./config.ini');
 
 app.use(app.router);
 
-var routes = require('./routes')(app);
+app.resource('users', require('./handlers/users.js'));
+app.locals.pretty = true;
+//var routes = require('./routes')(app);
+/**
+app.namespace('/articles', function() {
+    app.get('/', function(req, res) {
+        res.send('index of articles');
+    });
+
+    app.get('/new', function(req, res) {
+        res.send('new article');
+    });
+
+    app.get('/edit/:id', function(req, res) {
+        res.send('edit article '+ req.params.id);
+    });
+
+    app.get('/delete/:id', function(req, res) {
+        res.send('delete article ' + req.params.id);
+    });
+
+    app.get('/2013', function(req, res) {
+        res.send('articles from 2013');
+    });
+
+        app.namespace('/2013/jan', function() {
+            app.get('/', function(req, res) {
+                res.send('articles from jan 2013');
+            });
+
+            app.get('/nodejs', function(req, res) {
+                res.send('articles about node from jan 2013');
+            });
+        });
+});
+*/
 
 app.set('view engine', 'jade');
 app.set('views', './views');
