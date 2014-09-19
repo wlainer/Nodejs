@@ -1,3 +1,15 @@
+var routes = require('./handlers');
+var user = require('./handlers/users');
+
+module.exports = function(app) {
+
+	//Define tje routes
+	app.get('/', routes.index);
+	app.get('/users', user.list);
+};
+
+
+/**
 module.exports = function(app) {
 	app.get('/', function(req, res) {
 		res.send('Welcome!');
@@ -11,3 +23,4 @@ module.exports = function(app) {
 		res.render('contact');
 	});
 };
+*/
