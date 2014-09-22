@@ -10,6 +10,51 @@ var config = iniparser.parseSync('./config.ini');
 
 app.use(app.router);
 
+app.get('/', function(req, res) {
+    res.render('jadeLayout', {
+        title: 'Learning Jade'
+    });
+});
+/**
+app.use(function(req, res) {
+    res.status(400);
+    res.render('404.jade', {
+        title: '404',
+        message: 'File not found'
+    });
+});
+
+app.use(function(error, req, res, next) {
+    res.status(500);
+    res.render('500.jade', {
+        title: '500',
+        error: error
+    });
+});
+
+app.get('/', function(req, res) {
+    res.format({
+        'text/plain': function() {
+            res.send('welcome');
+        },
+        'text/html': function() {
+            res.render('<b>welcome</b>');
+        },
+        'application/json': function() {
+            res.json({message: 'welcome'});
+        },
+        'default': function() {
+            res.send(406, 'Not acceptable');
+        }
+    });
+
+});
+*/
+
+app.get('/error', function(req, res) {
+    error();
+});
+
 app.resource('users', require('./handlers/users.js'));
 app.locals.pretty = true;
 //var routes = require('./routes')(app);

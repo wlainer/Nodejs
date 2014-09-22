@@ -1,0 +1,62 @@
+doctype
+html
+    head
+        title #{title}
+        style(type='text/css').
+            #wrapper {
+                font: 14px Arial;
+                width: 300px;
+                padding: 5px;
+                border: 1px solid #ccc;
+                margin: 0 auto;
+            }
+            #content {
+                margin:10px 0;
+            }
+            .highlighted {
+                background: #d0ff5e;
+            }
+    body
+        - var title2 = 'Teste title 2'
+
+        mixin skills_list
+            ul
+                li Dancing
+                li Computer hacking
+                li Nunchuks
+
+        #wrapper
+            h1 #{title}
+            h4 #{title2}
+            #content
+                p Jade is intuitive, Jade is logical. Jade maked html easy, Jade saves time.
+                p.highlighted Here is some highlighted text.
+
+                mixin skills_list
+
+                p.
+                    one two
+                    buckler my show
+
+                pre.
+                    step 1
+                      step 2
+                          step 3
+
+                :markdown
+                    #Websites
+
+                    1. [Wikipedia] (http://wikipedia.org)
+                    2. [Google] (http://www.google.com)
+
+                    ** IMPORTANT **: Install the 'markdown' module
+
+            footer
+                span Copyright &copy; 2013
+                a(href='/') Home
+
+        script.
+            var greeting = 'Welcome to Jade';
+            document.querySelector('#content').onclick = function() {
+                alert(greeting);
+            };
