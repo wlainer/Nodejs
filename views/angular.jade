@@ -1,0 +1,33 @@
+doctype
+html
+    head
+        title Learning Angular
+
+    body(ng-app="myApp")
+        div(ng-controller="UserCtrl as userCtrl")
+            p.username Welcome, {{ userCtrl.user.details.username }}
+            p.id User ID: {{ userCtrl.user.details.id }}
+
+            a(class="custom-button") Click me
+
+            p
+                input(ng-model="val1" style="width: 50px;")
+                input(ng-model="val2" style="width: 50px;")
+                button(ng-click="userCtrl.multiply(val1, val2)") Multiplicar
+            p {{ userCtrl.result }}
+
+            p {{ userCtrl.greeting | Reverse:true}}
+
+            p Lower bound: {{ userCtrl.lowerBound}}
+            li(ng-repeat="number in userCtrl.numbers | filter:userCtrl.greaterThanNum")
+                | {{ number }}
+
+            p {{ userCtrl.response }}
+
+        script(src="bower_components/angular/angular.js")
+        script(src="js/app.js")
+        script(src="js/myctrl.js")
+        script(src="js/custombutton.js")
+        script(src="js/multiply.js")
+        script(src="js/server.js")
+        script(src="js/reverse.js")

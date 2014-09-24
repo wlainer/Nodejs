@@ -10,8 +10,8 @@ var config = iniparser.parseSync('./config.ini');
 
 app.use(app.router);
 
-app.get('/', function(req, res) {
-    res.render('jadeLayout', {
+app.get('/angular', function(req, res) {
+    res.render('angular', {
         title: 'Learning Jade'
     });
 });
